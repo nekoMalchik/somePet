@@ -1,5 +1,15 @@
 
 services:
+  php:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/app:rw
+    depends_on:
+      database:
+        condition: service_healthy
+
 ###> doctrine/doctrine-bundle ###
   database:
     ports:
