@@ -16,3 +16,7 @@ config: formatter: monolog.formatter.json
 ```
 {"message":"User has joined","context":{},"level":300,"level_name":"WARNING","channel":"app","datetime":"2026-06-03T18:51:45.005283+00:00","extra":{"token":"d51e405a-41901853","userEmail":"as@ya.ru"}}
 ```
+
+# Command
+тупа вывод три секции по документации
+src/Command/TestCommand.php
