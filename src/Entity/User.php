@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Doctrine\Type\MoneyType;
+use App\Money\Money;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -33,6 +35,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column(type: MoneyType::NAME)]
+    private Money $balance;
+
+    public function __construct()
+    {
+        $this->balance = new Money(0, 'RUB');
+    }
 
     public function getId(): ?int
     {
@@ -94,6 +104,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getBalance(): Money
+    {
+        return $this->balance;
+    }
+
+    public function setBalance(Money $balance): static
+    {
+        $this->balance = $balance;
 
         return $this;
     }

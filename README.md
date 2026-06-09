@@ -20,3 +20,8 @@ config: formatter: monolog.formatter.json
 # Command
 тупа вывод три секции по документации
 src/Command/TestCommand.php
+
+# CustomDoctrineType
+Реализуем методы асбтрактного типа Type
+use Doctrine\DBAL\Types\Type;
+Реализацию типа можно "подглядеть" как раз у соседей (тех, кто реализует Type) - там всё понятно
