@@ -25,3 +25,8 @@ src/Command/TestCommand.php
 Реализуем методы асбтрактного типа Type
 use Doctrine\DBAL\Types\Type;
 Реализацию типа можно "подглядеть" как раз у соседей (тех, кто реализует Type) - там всё понятно
+
+# PdoSessionHandler
+/somePet/config/services.yaml - объявляем кастомный хендлер под хранение сессий
+/somePet/config/packages/framework.yaml - объявляем симфонейский способ хранения сессия в БД через PDO и присваиваем ему сервис
+/somePet/migrations/Version20260622000000.php - создаем место под хранение сессий
